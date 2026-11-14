@@ -1,0 +1,201 @@
+<div class="preloader" id="site-loader" role="status" aria-live="polite">
+  <div class="preloader-content">
+    <div class="monogram">
+      <svg class="monogram-rings" viewBox="0 0 120 120" aria-hidden="true">
+        <circle class="ring-secondary" cx="60" cy="60" r="46" />
+        <circle class="ring-primary" cx="60" cy="60" r="54" pathLength="100" />
+        <g class="orbit-accent">
+          <circle cx="60" cy="6" r="1.6" />
+        </g>
+      </svg>
+      <span class="monogram-letters" aria-hidden="true">AG</span>
+    </div>
+    <span class="preloader-caption">Loading portfolio</span>
+  </div>
+</div>
+
+<style>
+  .preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    place-items: center;
+    overflow: hidden;
+    background: #2a1018;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 0.65s ease,
+      visibility 0s linear 0.65s;
+  }
+
+  :global(html.site-loading) {
+    overflow: hidden;
+  }
+
+  :global(html.site-loading body) {
+    overflow: hidden;
+  }
+
+  :global(html.site-loading) .preloader {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition:
+      opacity 0.65s ease,
+      visibility 0s;
+    animation: background-reveal 0.45s ease-out both;
+  }
+
+  :global(html.site-ready) .preloader {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .preloader-content {
+    position: relative;
+    display: grid;
+    place-items: center;
+    justify-items: center;
+  }
+
+  .monogram {
+    position: relative;
+    display: grid;
+    width: clamp(110px, 31vw, 130px);
+    aspect-ratio: 1;
+    place-items: center;
+  }
+
+  .monogram-rings {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    transform: rotate(-90deg);
+  }
+
+  .ring-secondary {
+    fill: none;
+    stroke: #b89a65;
+    stroke-width: 0.65;
+    opacity: 0.42;
+  }
+
+  .ring-primary {
+    fill: none;
+    stroke: #b89a65;
+    stroke-width: 1.15;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: circle-draw 1.05s cubic-bezier(0.42, 0, 0.2, 1) 0.15s forwards;
+  }
+
+  .orbit-accent {
+    fill: #b89a65;
+    transform-box: view-box;
+    transform-origin: 60px 60px;
+    animation: accent-orbit 12s linear 1.3s infinite;
+  }
+
+  .monogram-letters {
+    color: #f7f3ef;
+    font-family: 'Cormorant SC', 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.2rem, 7vw, 3rem);
+    font-weight: 600;
+    letter-spacing: 0.045em;
+    line-height: 1;
+    opacity: 0;
+    padding-left: 0.045em;
+    transform: scale(0.95);
+    animation: monogram-reveal 0.5s cubic-bezier(0.2, 0.7, 0.25, 1) 0.6s forwards;
+  }
+
+  .preloader-caption {
+    position: absolute;
+    top: calc(100% + clamp(1.25rem, 3vh, 1.8rem));
+    color: #d8cec8;
+    font-family: 'Cormorant SC', 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: caption-reveal 0.35s ease-out 0.95s forwards;
+  }
+
+  @keyframes background-reveal {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes circle-draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes monogram-reveal {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes caption-reveal {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes accent-orbit {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .monogram {
+      width: clamp(145px, 18vw, 165px);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .monogram {
+      width: clamp(175px, 14vw, 200px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .preloader {
+      transition: none;
+      animation: none !important;
+    }
+
+    .ring-primary {
+      stroke-dashoffset: 0;
+      animation: none;
+    }
+
+    .orbit-accent {
+      animation: none;
+    }
+
+    .monogram-letters,
+    .preloader-caption {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+  }
+</style>

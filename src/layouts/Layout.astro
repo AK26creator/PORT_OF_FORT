@@ -18,6 +18,10 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <title>{title}</title>
+    <script is:inline>
+      document.documentElement.classList.add('site-loading');
+      document.documentElement.dataset.loaderStarted = String(performance.now());
+    </script>
   </head>
   <body>
     <slot />
