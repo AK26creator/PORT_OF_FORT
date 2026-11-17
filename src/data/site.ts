@@ -5,10 +5,10 @@ export type NavItem = {
 
 export const navigation: NavItem[] = [
   { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Expertise', href: '#businesses' },
-  { label: 'Education', href: '#recognition' },
   { label: 'Why Work With Me', href: '#leadership' },
+  { label: 'About', href: '#about' },
+  { label: 'Education', href: '#recognition' },
+  { label: 'Expertise', href: '#businesses' },
   { label: 'Skills & Interests', href: '#media' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -34,27 +34,32 @@ export const socialLinks = [
 export const partnerLogos = [
   {
     name: 'Voltare',
-    src: '/voltare-partner-logo.png',
+    src: '/voltare-partner-logo-transparent.png',
     href: 'https://www.linkedin.com/in/anchit-goyal/',
   },
   {
     name: 'BC Resource Group',
-    src: '/bc-resource-group-logo.png',
+    src: '/bc-resource-group-logo-transparent.png',
     href: 'https://www.linkedin.com/in/anchit-goyal/',
   },
   {
     name: 'Blue Whistle',
-    src: '/partner-blue-mark.png',
+    src: '/partner-blue-mark-transparent.png',
     href: 'https://www.linkedin.com/in/anchit-goyal/',
   },
   {
     name: 'Milky Way Ice creams & Fast food',
-    src: '/milky-way-logo.png',
+    src: '/milky-way-logo-transparent.png',
     href: 'https://www.linkedin.com/in/anchit-goyal/',
   },
   {
     name: 'Bank of America',
     src: '/bank-of-america-logo.png',
+    href: 'https://www.linkedin.com/in/anchit-goyal/',
+  },
+  {
+    name: 'Deloitte',
+    src: '/deloitte-logo.png',
     href: 'https://www.linkedin.com/in/anchit-goyal/',
   },
 ];
@@ -82,6 +87,14 @@ export const businessHighlights = [
     description:
       'Studied Economics and Management at The London School of Economics and Political Science.',
     role: 'LSE graduate',
+    href: 'https://www.linkedin.com/in/anchit-goyal/',
+  },
+  {
+    name: 'Poetry, Photography & Travel',
+    industry: 'Creative interests',
+    description:
+      'Poetry, photography, and travel are among Anchit’s creative interests.',
+    role: 'Creative interests',
     href: 'https://www.linkedin.com/in/anchit-goyal/',
   },
 ];

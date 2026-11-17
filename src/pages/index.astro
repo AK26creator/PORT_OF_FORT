@@ -54,7 +54,7 @@ const quoteImageUrl = '/anchit-professional-portrait.webp';
         <div class="hero-copy">
           <p class="eyebrow"></p>
           <h1>Anchit<br />Goyal</h1>
-          <p class="hero-role">Entrepreneur · Recruiter · Researcher · Poet · Photographer · Traveller</p>
+          <p class="hero-role">Entrepreneur · Recruiter · Researcher</p>
           <p>
             An entrepreneur and strategic business leader driving talent transformation,
             strengthening industry connections, and building ventures that turn business
@@ -100,145 +100,7 @@ const quoteImageUrl = '/anchit-professional-portrait.webp';
         </div>
       </section>
 
-      <div class="brand-strip" aria-label="Featured brands">
-        {partnerLogos.map((logo) => (
-          <a
-            class="brand-pill"
-            href={logo.href}
-            aria-label={`Visit ${logo.name} on Anchit Goyal's LinkedIn`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={logo.src} alt="" loading="lazy" />
-          </a>
-        ))}
-      </div>
-
       <div class="lower-page">
-        <section class="section" id="about" aria-labelledby="about-title">
-          <article class="about-card">
-            <div class="about-card-image">
-              <img
-                src={aboutImageUrl}
-                alt="Anchit Goyal in his graduation gown at a baseball stadium"
-                loading="lazy"
-              />
-            </div>
-
-            <div class="about-card-content">
-              <span class="kicker">About</span>
-              <h2 class="section-title about-card-title" id="about-title">
-                Economics. Management. Analysis.
-              </h2>
-              <p class="about-card-lead">
-                An entrepreneur and strategic business leader driving talent transformation,
-                strengthening industry connections, and building ventures that turn business
-                opportunities into lasting impact.
-              </p>
-              <p class="about-card-description">
-                His professional strengths include writing and communication, teamwork and
-                leadership, research and analysis, economic theory, and management theory. This
-                combination brings together clear communication, collaborative work, and an
-                analytical academic foundation.
-              </p>
-            </div>
-          </article>
-        </section>
-
-        <section class="section" id="businesses">
-          <article class="experience-card">
-            <div class="experience-card-photo">
-              <img
-                src="/expertise-background.webp"
-                alt="Anchit Goyal in a suit and sunglasses"
-                loading="lazy"
-              />
-            </div>
-
-            <div class="experience-card-content">
-              <div class="experience-group" aria-labelledby="expertise-title">
-                <span class="kicker">Areas of expertise</span>
-                <h2 class="section-title" id="expertise-title">Skills for thoughtful analysis.</h2>
-
-                <div class="experience-list">
-                  {businessHighlights.map((item) => (
-                    <article class="experience-item">
-                      <div class="experience-item-heading">
-                        <h3>{item.name}</h3>
-                        <span>{item.role}</span>
-                      </div>
-                      <p>{item.description}</p>
-                      <a href={item.href} target="_blank" rel="noopener noreferrer">
-                        View profile <span aria-hidden="true">↗</span>
-                      </a>
-                    </article>
-                  ))}
-                </div>
-              </div>
-
-              <div class="experience-group" id="journey" aria-labelledby="background-title">
-                <span class="kicker">Professional background</span>
-                <h2 class="section-title" id="background-title">
-                  A foundation in study and analysis.
-                </h2>
-
-                <div class="experience-list">
-                  {journeySteps.map((step) => (
-                    <article class="experience-item">
-                      <span class="experience-item-label">{step.year}</span>
-                      <h3>{step.title}</h3>
-                      <p>{step.body}</p>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <section class="section" id="recognition">
-          <div class="section-header">
-            <div>
-              <span class="kicker">Education &amp; profile</span>
-              <h2 class="section-title">A record grounded in academic achievement.</h2>
-            </div>
-          </div>
-
-          <article class="education-card">
-            <div class="education-campuses">
-              <figure class="education-campus">
-                <img
-                  src="/lse-campus.webp"
-                  alt="The Old Building at the London School of Economics and Political Science"
-                  loading="lazy"
-                />
-                <figcaption>London School of Economics and Political Science</figcaption>
-              </figure>
-              <figure class="education-campus">
-                <img
-                  src="/nyu-campus.webp"
-                  alt="New York University flag on campus"
-                  loading="lazy"
-                />
-                <figcaption>New York University</figcaption>
-              </figure>
-            </div>
-
-            <div class="education-card-content">
-              <div class="education-program">
-                <span class="education-honour">LSE</span>
-                <h3>Economics &amp; Management</h3>
-                <p>Bachelor of Science - BA First-Class Honours</p>
-              </div>
-              <div class="education-program">
-                <span class="education-honour">New York University</span>
-                <h3>Econometrics and Quantitative Economics</h3>
-                <p>Master of Arts - MA</p>
-              </div>
-            </div>
-          </article>
-        </section>
-
         <section class="section approach-section" id="leadership" aria-labelledby="approach-title">
           <div class="approach-layout">
             <div class="approach-photo-frame" data-reveal>
@@ -325,6 +187,144 @@ const quoteImageUrl = '/anchit-professional-portrait.webp';
               </a>
             </div>
           </div>
+        </section>
+
+        <div class="brand-strip" aria-label="Featured brands">
+          {partnerLogos.map((logo) => (
+            <a
+              class="brand-pill"
+              href={logo.href}
+              aria-label={`Visit ${logo.name} on Anchit Goyal's LinkedIn`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={logo.src} alt="" loading="lazy" />
+            </a>
+          ))}
+        </div>
+
+        <section class="section" id="about" aria-labelledby="about-title">
+          <article class="about-card">
+            <div class="about-card-image">
+              <img
+                src={aboutImageUrl}
+                alt="Anchit Goyal in his graduation gown at a baseball stadium"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="about-card-content">
+              <span class="kicker">About</span>
+              <h2 class="section-title about-card-title" id="about-title">
+                Economics. Management. Analysis.
+              </h2>
+              <p class="about-card-lead">
+                An entrepreneur and strategic business leader driving talent transformation,
+                strengthening industry connections, and building ventures that turn business
+                opportunities into lasting impact.
+              </p>
+              <p class="about-card-description">
+                His professional strengths include writing and communication, teamwork and
+                leadership, research and analysis, economic theory, and management theory. This
+                combination brings together clear communication, collaborative work, and an
+                analytical academic foundation.
+              </p>
+            </div>
+          </article>
+        </section>
+
+        <section class="section" id="recognition">
+          <div class="section-header">
+            <div>
+              <span class="kicker">Education &amp; profile</span>
+              <h2 class="section-title">A record grounded in academic achievement.</h2>
+            </div>
+          </div>
+
+          <article class="education-card">
+            <div class="education-campuses">
+              <figure class="education-campus">
+                <img
+                  src="/lse-campus.webp"
+                  alt="The Old Building at the London School of Economics and Political Science"
+                  loading="lazy"
+                />
+                <figcaption>London School of Economics and Political Science</figcaption>
+              </figure>
+              <figure class="education-campus">
+                <img
+                  src="/nyu-campus.webp"
+                  alt="New York University flag on campus"
+                  loading="lazy"
+                />
+                <figcaption>New York University</figcaption>
+              </figure>
+            </div>
+
+            <div class="education-card-content">
+              <div class="education-program">
+                <span class="education-honour">LSE</span>
+                <h3>Economics &amp; Management</h3>
+                <p>Bachelor of Science - BA First-Class Honours</p>
+              </div>
+              <div class="education-program">
+                <span class="education-honour">New York University</span>
+                <h3>Econometrics and Quantitative Economics</h3>
+                <p>Master of Arts - MA</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="section" id="businesses">
+          <article class="experience-card">
+            <div class="experience-card-photo">
+              <img
+                src="/expertise-background.webp"
+                alt="Anchit Goyal in a suit and sunglasses"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="experience-card-content">
+              <div class="experience-group" aria-labelledby="expertise-title">
+                <span class="kicker">Areas of expertise</span>
+                <h2 class="section-title" id="expertise-title">Skills for thoughtful analysis.</h2>
+
+                <div class="experience-list">
+                  {businessHighlights.map((item) => (
+                    <article class="experience-item">
+                      <div class="experience-item-heading">
+                        <h3>{item.name}</h3>
+                        <span>{item.role}</span>
+                      </div>
+                      <p>{item.description}</p>
+                      <a href={item.href} target="_blank" rel="noopener noreferrer">
+                        View profile <span aria-hidden="true">↗</span>
+                      </a>
+                    </article>
+                  ))}
+                </div>
+              </div>
+
+              <div class="experience-group" id="journey" aria-labelledby="background-title">
+                <span class="kicker">Professional background</span>
+                <h2 class="section-title" id="background-title">
+                  A foundation in study and analysis.
+                </h2>
+
+                <div class="experience-list">
+                  {journeySteps.map((step) => (
+                    <article class="experience-item">
+                      <span class="experience-item-label">{step.year}</span>
+                      <h3>{step.title}</h3>
+                      <p>{step.body}</p>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </article>
         </section>
 
         <section class="section media-section" id="media">

@@ -488,7 +488,7 @@ textarea {
 
 .brand-strip {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 1rem;
   align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -504,7 +504,7 @@ textarea {
   padding: 0.65rem;
   border-radius: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  background: #fff;
+  background: transparent;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -1361,16 +1361,6 @@ textarea {
     grid-column: span 2;
   }
 
-  .brand-pill:nth-child(4) {
-    grid-column: 2 / span 2;
-    grid-row: 2;
-  }
-
-  .brand-pill:nth-child(5) {
-    grid-column: 4 / span 2;
-    grid-row: 2;
-  }
-
   .experience-card {
     grid-template-columns: 1fr;
   }
@@ -1649,8 +1639,7 @@ textarea {
     gap: 0.65rem;
   }
 
-  .brand-pill,
-  .brand-pill:nth-child(4) {
+  .brand-pill {
     grid-column: span 2;
     grid-row: auto;
   }
