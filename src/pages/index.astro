@@ -11,9 +11,8 @@ import {
   mediaItems,
 } from '../data/site';
 
-const portraitUrl = '/anchit-goyal-portrait.webp';
-const aboutImageUrl =
-  'https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80';
+const portraitUrl = '/anchit-goyal-portrait.jpg';
+const aboutImageUrl = '/anchit-graduation.webp';
 const quoteImageUrl =
   'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80';
 ---
@@ -55,15 +54,15 @@ const quoteImageUrl =
     <main>
       <section class="hero-panel" id="home" aria-label="Executive hero section">
         <div class="hero-copy">
-          <p class="eyebrow">Hi I’m </p>
-          <h1>ANCHIT<br />GOYAL</h1>
-          <p class="hero-role">Experienced Analyst · Economics &amp; Management</p>
+          <p class="eyebrow"></p>
+          <h1>Anchit<br />Goyal</h1>
+          <p class="hero-role">Entrepreneur · Recruiter · Researcher · Poet · Photographer · Traveller</p>
           <p>
-            An experienced analyst with a demonstrated background in the management consulting
-            industry. A First-Class Honours graduate in Economics and Management from The London
-            School of Economics and Political Science.
+            An entrepreneur and strategic business leader driving talent transformation,
+            strengthening industry connections, and building ventures that turn business
+            opportunities into lasting impact.
           </p>
-          <div class="signature">Anchit Goyal</div>
+          <div class="signature"></div>
         </div>
 
         <div class="hero-visual">
@@ -71,8 +70,8 @@ const quoteImageUrl =
             <img
               src={portraitUrl}
               alt="Portrait of Anchit Goyal"
-              width="427"
-              height="686"
+              width="768"
+              height="1024"
               fetchpriority="high"
             />
           </div>
@@ -87,7 +86,7 @@ const quoteImageUrl =
                 rel="noopener noreferrer"
               >
                 {item.icon === 'voltare' ? (
-                  <img class="voltare-social-logo" src="/voltare-logo-black.png" alt="" />
+                  <img class="voltare-social-logo" src="/voltare-symbol-burgundy.png" alt="" />
                 ) : item.icon === 'instagram' ? (
                   <svg viewBox="0 0 24 24" aria-hidden="true">
                     <rect x="3" y="3" width="18" height="18" rx="5" />
@@ -103,230 +102,252 @@ const quoteImageUrl =
         </div>
       </section>
 
-      <div class="brand-strip" aria-label="Brand placeholders">
+      <div class="brand-strip" aria-label="Featured brands">
         {partnerLogos.map((logo) => (
-          <div class="brand-pill">{logo}</div>
+          <a
+            class="brand-pill"
+            href={logo.href}
+            aria-label={`Visit ${logo.name} on Anchit Goyal's LinkedIn`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={logo.src} alt="" loading="lazy" />
+          </a>
         ))}
       </div>
 
-      <section class="section" id="about">
-        <div class="section-header">
-          <div>
-            <span class="kicker">About</span>
-            <h2 class="section-title">Economics. Management. Analysis.</h2>
-          </div>
-          <p class="section-copy">
-            Anchit is an experienced analyst with a demonstrated history in management consulting.
-            He graduated from The London School of Economics and Political Science with First-Class
-            Honours in Economics and Management.
-          </p>
-        </div>
-
-        <div class="editorial-grid">
-          <article class="feature-card">
-            <p>
-              His professional strengths include writing and communication, teamwork and
-              leadership, research and analysis, economic theory, and management theory. This
-              combination brings together clear communication, collaborative work, and an
-              analytical academic foundation.
+      <div class="lower-page">
+        <section class="section" id="about">
+          <div class="section-header">
+            <div>
+              <span class="kicker">About</span>
+              <h2 class="section-title">Economics. Management. Analysis.</h2>
+            </div>
+            <p class="section-copy">
+              An entrepreneur and strategic business leader driving talent transformation, strengthening industry connections, and building ventures that turn business opportunities into lasting impact.
             </p>
-          </article>
-
-          <div class="feature-image">
-            <img src={aboutImageUrl} alt="Professional collaboration in a business setting" loading="lazy" />
           </div>
-        </div>
-      </section>
 
-      <section class="section" id="businesses">
-        <div class="section-header">
-          <div>
-            <span class="kicker">Areas of expertise</span>
-            <h2 class="section-title">Skills for thoughtful analysis.</h2>
+          <div class="editorial-grid">
+            <article class="feature-card">
+              <p>
+                His professional strengths include writing and communication, teamwork and
+                leadership, research and analysis, economic theory, and management theory. This
+                combination brings together clear communication, collaborative work, and an
+                analytical academic foundation.
+              </p>
+            </article>
+
+            <div class="feature-image">
+              <img
+                src={aboutImageUrl}
+                alt="Anchit Goyal in his graduation gown at a baseball stadium"
+                loading="lazy"
+              />
+            </div>
           </div>
-        </div>
+        </section>
 
-        <div class="business-grid">
-          {businessHighlights.map((item) => (
-            <article class="business-card">
-              <div class="business-logo">{item.name.slice(0, 2).toUpperCase()}</div>
-              <div class="business-meta">{item.industry}</div>
-              <h3>{item.name}</h3>
-              <div class="business-meta">{item.role}</div>
-              <p>{item.description}</p>
-              <a class="card-link" href={item.href} target="_blank" rel="noopener noreferrer">
-                View profile <span aria-hidden="true">↗</span>
+        <section class="section" id="businesses">
+          <div class="section-header">
+            <div>
+              <span class="kicker">Areas of expertise</span>
+              <h2 class="section-title">Skills for thoughtful analysis.</h2>
+            </div>
+          </div>
+
+          <div class="business-grid">
+            {businessHighlights.map((item) => (
+              <article class="business-card">
+                <div class="business-logo">{item.name.slice(0, 2).toUpperCase()}</div>
+                <div class="business-meta">{item.industry}</div>
+                <h3>{item.name}</h3>
+                <div class="business-meta">{item.role}</div>
+                <p>{item.description}</p>
+                <a class="card-link" href={item.href} target="_blank" rel="noopener noreferrer">
+                  View profile <span aria-hidden="true">↗</span>
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="section" id="journey">
+          <div class="section-header">
+            <div>
+              <span class="kicker">Professional background</span>
+              <h2 class="section-title">A foundation in study and analysis.</h2>
+            </div>
+          </div>
+
+          <div class="timeline">
+            {journeySteps.map((step) => (
+              <article class="timeline-card">
+                <span class="timeline-year">{step.year}</span>
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="section" id="recognition">
+          <div class="section-header">
+            <div>
+              <span class="kicker">Education &amp; profile</span>
+              <h2 class="section-title">A record grounded in academic achievement.</h2>
+            </div>
+          </div>
+
+          <div class="metrics">
+            {highlights.map((item) => (
+              <div class="metric">
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section class="section" id="leadership">
+          <div class="section-header">
+            <div>
+              <span class="kicker">Professional approach</span>
+              <h2 class="section-title">Research, clarity, and collaboration.</h2>
+            </div>
+          </div>
+
+          <div class="quote-block">
+            <div class="quote-visual">
+              <img src={quoteImageUrl} alt="Team collaboration" loading="lazy" />
+            </div>
+
+            <div class="quote-content">
+              <div class="quote-mark" aria-hidden="true">“</div>
+              <p class="profile-statement">
+                A professional foundation shaped by research and analysis, clear communication, and
+                teamwork.
+              </p>
+              <p>
+                These are the skills Anchit identifies in his professional profile, supported by his
+                academic background in Economics and Management.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="media">
+          <div class="section-header">
+            <div>
+              <span class="kicker">Skills &amp; interests</span>
+              <h2 class="section-title">Ideas informed by theory and research.</h2>
+            </div>
+          </div>
+
+          <div class="media-grid">
+            {mediaItems.map((item) => (
+              <article class="media-card">
+                <span class="tag">{item.category}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="contact-panel" id="contact" aria-label="Connect with Anchit Goyal">
+          <div class="contact-copy">
+            <span class="kicker">Connect</span>
+            <h2>Let’s start a conversation.</h2>
+
+            <dl class="contact-meta">
+              <div>
+                <dt>Industry</dt>
+                <dd>Management consulting</dd>
+              </div>
+              <div>
+                <dt>Education</dt>
+                <dd>Economics and Management, LSE</dd>
+              </div>
+            </dl>
+          </div>
+
+          <form class="contact-form" data-contact-form>
+            <div class="field-row">
+              <label>
+                Name
+                <input type="text" name="name" placeholder="Your name" autocomplete="name" required />
+              </label>
+              <label>
+                Email
+                <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+              </label>
+            </div>
+
+            <div class="field-row">
+              <label>
+                Phone
+                <input type="tel" name="phone" placeholder="Optional" autocomplete="tel" />
+              </label>
+              <label>
+                Company
+                <input type="text" name="company" placeholder="Company name" autocomplete="organization" />
+              </label>
+            </div>
+
+            <label>
+              Enquiry subject
+              <input type="text" name="subject" placeholder="Professional enquiry" required />
+            </label>
+
+            <label>
+              Message
+              <textarea name="message" placeholder="Tell us about your enquiry" required></textarea>
+            </label>
+
+            <button type="submit">Send Enquiry</button>
+          </form>
+        </section>
+
+        <footer class="footer">
+          <div class="footer-brand">
+            <strong>Anchit Goyal</strong> · Analyst
+          </div>
+
+          <div class="footer-details">
+            <a class="footer-website" href="https://www.voltare.in/" target="_blank" rel="noopener noreferrer">
+              Voltare · voltare.in <span aria-hidden="true">↗</span>
+            </a>
+            <nav class="footer-socials" aria-label="Social profiles">
+              <a
+                class="footer-social-link"
+                href="https://www.linkedin.com/in/anchit-goyal/"
+                aria-label="Visit Anchit Goyal on LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 9v10M5 5.5v.01M10 19v-6a3 3 0 0 1 6 0v6M10 10v9" />
+                </svg>
               </a>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section class="section" id="journey">
-        <div class="section-header">
-          <div>
-            <span class="kicker">Professional background</span>
-            <h2 class="section-title">A foundation in study and analysis.</h2>
+              <a
+                class="footer-social-link"
+                href="https://www.instagram.com/goyalanchit/"
+                aria-label="Visit Anchit Goyal on Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle class="instagram-dot" cx="17.5" cy="6.5" r="1" />
+                </svg>
+              </a>
+            </nav>
           </div>
-        </div>
-
-        <div class="timeline">
-          {journeySteps.map((step) => (
-            <article class="timeline-card">
-              <span class="timeline-year">{step.year}</span>
-              <h3>{step.title}</h3>
-              <p>{step.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section class="section" id="recognition">
-        <div class="section-header">
-          <div>
-            <span class="kicker">Education &amp; profile</span>
-            <h2 class="section-title">A record grounded in academic achievement.</h2>
-          </div>
-        </div>
-
-        <div class="metrics">
-          {highlights.map((item) => (
-            <div class="metric">
-              <strong>{item.value}</strong>
-              <span>{item.label}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section class="section" id="leadership">
-        <div class="section-header">
-          <div>
-            <span class="kicker">Professional approach</span>
-            <h2 class="section-title">Research, clarity, and collaboration.</h2>
-          </div>
-        </div>
-
-        <div class="quote-block">
-          <div class="quote-visual">
-            <img src={quoteImageUrl} alt="Team collaboration" loading="lazy" />
-          </div>
-
-          <div class="quote-content">
-            <div class="quote-mark" aria-hidden="true">“</div>
-            <p class="profile-statement">
-              A professional foundation shaped by research and analysis, clear communication, and
-              teamwork.
-            </p>
-            <p>
-              These are the skills Anchit identifies in his professional profile, supported by his
-              academic background in Economics and Management.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="media">
-        <div class="section-header">
-          <div>
-            <span class="kicker">Skills &amp; interests</span>
-            <h2 class="section-title">Ideas informed by theory and research.</h2>
-          </div>
-        </div>
-
-        <div class="media-grid">
-          {mediaItems.map((item) => (
-            <article class="media-card">
-              <span class="tag">{item.category}</span>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section class="contact-panel" id="contact" aria-label="Connect with Anchit Goyal">
-        <div class="contact-copy">
-          <span class="kicker">Connect</span>
-          <h2>Let’s start a conversation.</h2>
-
-          <dl class="contact-meta">
-            <div>
-              <dt>LinkedIn</dt>
-              <dd>
-                <a href="https://www.linkedin.com/in/anchit-goyal/" target="_blank" rel="noopener noreferrer">
-                  Anchit Goyal ↗
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt>Instagram</dt>
-              <dd>
-                <a href="https://www.instagram.com/goyalanchit/" target="_blank" rel="noopener noreferrer">
-                  @goyalanchit ↗
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt>Industry</dt>
-              <dd>Management consulting</dd>
-            </div>
-            <div>
-              <dt>Education</dt>
-              <dd>Economics and Management, LSE</dd>
-            </div>
-          </dl>
-        </div>
-
-        <form class="contact-form">
-          <div class="field-row">
-            <label>
-              Name
-              <input type="text" name="name" placeholder="Your name" />
-            </label>
-            <label>
-              Email
-              <input type="email" name="email" placeholder="you@example.com" />
-            </label>
-          </div>
-
-          <div class="field-row">
-            <label>
-              Phone
-              <input type="tel" name="phone" placeholder="Optional" />
-            </label>
-            <label>
-              Company
-              <input type="text" name="company" placeholder="Company name" />
-            </label>
-          </div>
-
-          <label>
-            Enquiry subject
-            <input type="text" name="subject" placeholder="Professional enquiry" />
-          </label>
-
-          <label>
-            Message
-            <textarea name="message" placeholder="Tell us about your enquiry"></textarea>
-          </label>
-
-          <button type="submit">Send Enquiry</button>
-        </form>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div>
-        <strong>Anchit Goyal</strong> · Analyst
+        </footer>
       </div>
-
-      <nav class="footer-nav" aria-label="Footer navigation">
-        {navigation.map((item) => (
-          <a href={item.href}>{item.label}</a>
-        ))}
-      </nav>
-    </footer>
+    </main>
   </div>
 </Layout>
 
@@ -335,6 +356,39 @@ const quoteImageUrl =
     link.addEventListener('click', () => {
       link.closest('details')?.removeAttribute('open');
     });
+  });
+
+  document.querySelector<HTMLFormElement>('[data-contact-form]')?.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    if (!(form instanceof HTMLFormElement)) return;
+
+    const formData = new FormData(form);
+    const name = String(formData.get('name') ?? '').trim();
+    const email = String(formData.get('email') ?? '').trim();
+    const phone = String(formData.get('phone') ?? '').trim();
+    const company = String(formData.get('company') ?? '').trim();
+    const subject = String(formData.get('subject') ?? '').trim();
+    const message = String(formData.get('message') ?? '').trim();
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone || 'Not provided'}`,
+      `Company: ${company || 'Not provided'}`,
+      '',
+      'Message:',
+      message,
+    ].join('\n');
+
+    const gmailComposeUrl = new URL('https://mail.google.com/mail/');
+    gmailComposeUrl.searchParams.set('view', 'cm');
+    gmailComposeUrl.searchParams.set('fs', '1');
+    gmailComposeUrl.searchParams.set('to', 'anchitgoyal@voltare.in');
+    gmailComposeUrl.searchParams.set('su', subject);
+    gmailComposeUrl.searchParams.set('body', body);
+
+    window.open(gmailComposeUrl.toString(), '_blank', 'noopener,noreferrer');
   });
 
   let loaderDismissed = false;

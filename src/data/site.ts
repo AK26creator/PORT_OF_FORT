@@ -31,12 +31,31 @@ export const socialLinks = [
 ];
 
 export const partnerLogos = [
-  'logoipsum',
-  'LOGOIPSUM',
-  'Logoipsum',
-  'Logoipsum',
-  'Logoipsum',
-  'Logoipsum',
+  {
+    name: 'Voltare',
+    src: '/voltare-partner-logo.png',
+    href: 'https://www.linkedin.com/in/anchit-goyal/',
+  },
+  {
+    name: 'BC Resource Group',
+    src: '/bc-resource-group-logo.png',
+    href: 'https://www.linkedin.com/in/anchit-goyal/',
+  },
+  {
+    name: 'Partner brand',
+    src: '/partner-blue-mark.png',
+    href: 'https://www.linkedin.com/in/anchit-goyal/',
+  },
+  {
+    name: 'Milky Way Ice creams & Fast food',
+    src: '/milky-way-logo.png',
+    href: 'https://www.linkedin.com/in/anchit-goyal/',
+  },
+  {
+    name: 'Bank of America',
+    src: '/bank-of-america-logo.png',
+    href: 'https://www.linkedin.com/in/anchit-goyal/',
+  },
 ];
 
 export const businessHighlights = [
