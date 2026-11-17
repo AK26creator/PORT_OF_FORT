@@ -7,14 +7,12 @@ import {
   partnerLogos,
   businessHighlights,
   journeySteps,
-  highlights,
   mediaItems,
 } from '../data/site';
 
 const portraitUrl = '/anchit-goyal-portrait.jpg';
 const aboutImageUrl = '/anchit-graduation.webp';
-const quoteImageUrl =
-  'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80';
+const quoteImageUrl = '/anchit-professional-portrait.webp';
 ---
 
 <Layout title="Anchit Goyal | Analyst">
@@ -117,78 +115,85 @@ const quoteImageUrl =
       </div>
 
       <div class="lower-page">
-        <section class="section" id="about">
-          <div class="section-header">
-            <div>
-              <span class="kicker">About</span>
-              <h2 class="section-title">Economics. Management. Analysis.</h2>
-            </div>
-            <p class="section-copy">
-              An entrepreneur and strategic business leader driving talent transformation, strengthening industry connections, and building ventures that turn business opportunities into lasting impact.
-            </p>
-          </div>
-
-          <div class="editorial-grid">
-            <article class="feature-card">
-              <p>
-                His professional strengths include writing and communication, teamwork and
-                leadership, research and analysis, economic theory, and management theory. This
-                combination brings together clear communication, collaborative work, and an
-                analytical academic foundation.
-              </p>
-            </article>
-
-            <div class="feature-image">
+        <section class="section" id="about" aria-labelledby="about-title">
+          <article class="about-card">
+            <div class="about-card-image">
               <img
                 src={aboutImageUrl}
                 alt="Anchit Goyal in his graduation gown at a baseball stadium"
                 loading="lazy"
               />
             </div>
-          </div>
+
+            <div class="about-card-content">
+              <span class="kicker">About</span>
+              <h2 class="section-title about-card-title" id="about-title">
+                Economics. Management. Analysis.
+              </h2>
+              <p class="about-card-lead">
+                An entrepreneur and strategic business leader driving talent transformation,
+                strengthening industry connections, and building ventures that turn business
+                opportunities into lasting impact.
+              </p>
+              <p class="about-card-description">
+                His professional strengths include writing and communication, teamwork and
+                leadership, research and analysis, economic theory, and management theory. This
+                combination brings together clear communication, collaborative work, and an
+                analytical academic foundation.
+              </p>
+            </div>
+          </article>
         </section>
 
         <section class="section" id="businesses">
-          <div class="section-header">
-            <div>
-              <span class="kicker">Areas of expertise</span>
-              <h2 class="section-title">Skills for thoughtful analysis.</h2>
+          <article class="experience-card">
+            <div class="experience-card-photo">
+              <img
+                src="/expertise-background.webp"
+                alt="Anchit Goyal in a suit and sunglasses"
+                loading="lazy"
+              />
             </div>
-          </div>
 
-          <div class="business-grid">
-            {businessHighlights.map((item) => (
-              <article class="business-card">
-                <div class="business-logo">{item.name.slice(0, 2).toUpperCase()}</div>
-                <div class="business-meta">{item.industry}</div>
-                <h3>{item.name}</h3>
-                <div class="business-meta">{item.role}</div>
-                <p>{item.description}</p>
-                <a class="card-link" href={item.href} target="_blank" rel="noopener noreferrer">
-                  View profile <span aria-hidden="true">↗</span>
-                </a>
-              </article>
-            ))}
-          </div>
-        </section>
+            <div class="experience-card-content">
+              <div class="experience-group" aria-labelledby="expertise-title">
+                <span class="kicker">Areas of expertise</span>
+                <h2 class="section-title" id="expertise-title">Skills for thoughtful analysis.</h2>
 
-        <section class="section" id="journey">
-          <div class="section-header">
-            <div>
-              <span class="kicker">Professional background</span>
-              <h2 class="section-title">A foundation in study and analysis.</h2>
+                <div class="experience-list">
+                  {businessHighlights.map((item) => (
+                    <article class="experience-item">
+                      <div class="experience-item-heading">
+                        <h3>{item.name}</h3>
+                        <span>{item.role}</span>
+                      </div>
+                      <p>{item.description}</p>
+                      <a href={item.href} target="_blank" rel="noopener noreferrer">
+                        View profile <span aria-hidden="true">↗</span>
+                      </a>
+                    </article>
+                  ))}
+                </div>
+              </div>
+
+              <div class="experience-group" id="journey" aria-labelledby="background-title">
+                <span class="kicker">Professional background</span>
+                <h2 class="section-title" id="background-title">
+                  A foundation in study and analysis.
+                </h2>
+
+                <div class="experience-list">
+                  {journeySteps.map((step) => (
+                    <article class="experience-item">
+                      <span class="experience-item-label">{step.year}</span>
+                      <h3>{step.title}</h3>
+                      <p>{step.body}</p>
+                    </article>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-
-          <div class="timeline">
-            {journeySteps.map((step) => (
-              <article class="timeline-card">
-                <span class="timeline-year">{step.year}</span>
-                <h3>{step.title}</h3>
-                <p>{step.body}</p>
-              </article>
-            ))}
-          </div>
+          </article>
         </section>
 
         <section class="section" id="recognition">
@@ -199,60 +204,146 @@ const quoteImageUrl =
             </div>
           </div>
 
-          <div class="metrics">
-            {highlights.map((item) => (
-              <div class="metric">
-                <strong>{item.value}</strong>
-                <span>{item.label}</span>
+          <article class="education-card">
+            <div class="education-campuses">
+              <figure class="education-campus">
+                <img
+                  src="/lse-campus.webp"
+                  alt="The Old Building at the London School of Economics and Political Science"
+                  loading="lazy"
+                />
+                <figcaption>London School of Economics and Political Science</figcaption>
+              </figure>
+              <figure class="education-campus">
+                <img
+                  src="/nyu-campus.webp"
+                  alt="New York University flag on campus"
+                  loading="lazy"
+                />
+                <figcaption>New York University</figcaption>
+              </figure>
+            </div>
+
+            <div class="education-card-content">
+              <div class="education-program">
+                <span class="education-honour">LSE</span>
+                <h3>Economics &amp; Management</h3>
+                <p>First-Class Honours</p>
               </div>
-            ))}
+              <div class="education-program">
+                <span class="education-honour">New York University</span>
+                <h3>Master of Arts (MA)</h3>
+                <p>Econometrics and Quantitative Economics</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="section approach-section" id="leadership" aria-labelledby="approach-title">
+          <div class="approach-layout">
+            <div class="approach-photo-frame" data-reveal>
+              <img
+                src={quoteImageUrl}
+                alt="Anchit Goyal, professional portrait"
+                width="768"
+                height="768"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="approach-content" data-reveal>
+              <span class="approach-kicker">Why work with me</span>
+              <h2 class="approach-title" id="approach-title">
+                Experience you can trust. Clarity you can act on.
+              </h2>
+              <p class="approach-intro">
+                Anchit pairs an economics and management foundation with research-led thinking,
+                clear communication, and a collaborative approach to complex business questions.
+              </p>
+
+              <div class="approach-pillars" aria-label="How Anchit works">
+                <article class="approach-pillar">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M12 3v3m0 12v3M3 12h3m12 0h3" />
+                    <circle cx="12" cy="12" r="7" />
+                    <circle cx="12" cy="12" r="2" />
+                  </svg>
+                  <h3>Strategic thinking</h3>
+                  <p>Connect business context to practical next steps.</p>
+                </article>
+
+                <article class="approach-pillar">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <circle cx="10.8" cy="10.8" r="6.8" />
+                    <path d="m16 16 4.5 4.5M8 11l1.8 1.8L14 8.5" />
+                  </svg>
+                  <h3>Research-led insight</h3>
+                  <p>Turn complex information into clear direction.</p>
+                </article>
+
+                <article class="approach-pillar">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M4 5.5h16v11H9l-5 3v-14Z" />
+                    <path d="M8 9h8M8 13h5" />
+                  </svg>
+                  <h3>Clear communication</h3>
+                  <p>Make ideas concise, useful, and actionable.</p>
+                </article>
+
+                <article class="approach-pillar">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <circle cx="9" cy="8" r="3" />
+                    <path d="M3.5 19v-1.5a5.5 5.5 0 0 1 11 0V19h-11Zm11-11a3 3 0 1 1 0 6m2 1a4.5 4.5 0 0 1 4 4.5" />
+                  </svg>
+                  <h3>Collaborative approach</h3>
+                  <p>Bring people together around shared outcomes.</p>
+                </article>
+              </div>
+
+              <div class="approach-stats" aria-label="Professional metrics">
+                <div class="approach-stat">
+                  <span class="approach-stat-value">CEO</span>
+                  <span class="approach-stat-label">Voltare</span>
+                </div>
+                <div class="approach-stat">
+                  <span class="approach-stat-value">Director</span>
+                  <span class="approach-stat-label">MilkyWay</span>
+                </div>
+              </div>
+
+              <div class="approach-credibility">
+                <span class="approach-credibility-label">Previously at</span>
+                <div class="approach-firms">
+                  <span>Deloitte</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Bank of America</span>
+                </div>
+              </div>
+
+              <a class="approach-cta" href="#contact">
+                Get in touch <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
         </section>
 
-        <section class="section" id="leadership">
-          <div class="section-header">
-            <div>
-              <span class="kicker">Professional approach</span>
-              <h2 class="section-title">Research, clarity, and collaboration.</h2>
-            </div>
-          </div>
-
-          <div class="quote-block">
-            <div class="quote-visual">
-              <img src={quoteImageUrl} alt="Team collaboration" loading="lazy" />
-            </div>
-
-            <div class="quote-content">
-              <div class="quote-mark" aria-hidden="true">“</div>
-              <p class="profile-statement">
-                A professional foundation shaped by research and analysis, clear communication, and
-                teamwork.
-              </p>
-              <p>
-                These are the skills Anchit identifies in his professional profile, supported by his
-                academic background in Economics and Management.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section class="section" id="media">
-          <div class="section-header">
-            <div>
+        <section class="section media-section" id="media">
+          <article class="skills-card" aria-labelledby="media-title">
+            <header class="skills-card-header">
               <span class="kicker">Skills &amp; interests</span>
-              <h2 class="section-title">Ideas informed by theory and research.</h2>
-            </div>
-          </div>
+              <h2 class="section-title" id="media-title">Ideas informed by theory and research.</h2>
+            </header>
 
-          <div class="media-grid">
-            {mediaItems.map((item) => (
-              <article class="media-card">
-                <span class="tag">{item.category}</span>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </article>
-            ))}
-          </div>
+            <div class="skills-list">
+              {mediaItems.map((item) => (
+                <article class="skills-item">
+                  <span class="tag">{item.category}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </article>
+              ))}
+            </div>
+          </article>
         </section>
 
         <section class="contact-panel" id="contact" aria-label="Connect with Anchit Goyal">
@@ -270,6 +361,13 @@ const quoteImageUrl =
                 <dd>Economics and Management, LSE</dd>
               </div>
             </dl>
+
+            <section class="contact-companies" aria-label="Companies">
+              <span class="contact-companies-label">Companies</span>
+              <div class="company-name-list">
+                {partnerLogos.map((logo) => <span>{logo.name}</span>)}
+              </div>
+            </section>
           </div>
 
           <form class="contact-form" data-contact-form>
@@ -310,10 +408,6 @@ const quoteImageUrl =
         </section>
 
         <footer class="footer">
-          <div class="footer-brand">
-            <strong>Anchit Goyal</strong> · Analyst
-          </div>
-
           <div class="footer-details">
             <a class="footer-website" href="https://www.voltare.in/" target="_blank" rel="noopener noreferrer">
               Voltare · voltare.in <span aria-hidden="true">↗</span>
@@ -352,6 +446,27 @@ const quoteImageUrl =
 </Layout>
 
 <script>
+  if (
+    'IntersectionObserver' in window &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  ) {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.14 },
+    );
+
+    document.documentElement.classList.add('has-scroll-reveal');
+    document.querySelectorAll<HTMLElement>('[data-reveal]').forEach((element) => {
+      revealObserver.observe(element);
+    });
+  }
+
   document.querySelectorAll('.mobile-nav-links a').forEach((link) => {
     link.addEventListener('click', () => {
       link.closest('details')?.removeAttribute('open');

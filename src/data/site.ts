@@ -6,10 +6,11 @@ export type NavItem = {
 export const navigation: NavItem[] = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
-  { label: 'Businesses', href: '#businesses' },
-  { label: 'Journey', href: '#journey' },
-  { label: 'Recognition', href: '#recognition' },
-  { label: 'Media', href: '#media' },
+  { label: 'Expertise', href: '#businesses' },
+  { label: 'Education', href: '#recognition' },
+  { label: 'Why Work With Me', href: '#leadership' },
+  { label: 'Skills & Interests', href: '#media' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export const socialLinks = [
@@ -42,7 +43,7 @@ export const partnerLogos = [
     href: 'https://www.linkedin.com/in/anchit-goyal/',
   },
   {
-    name: 'Partner brand',
+    name: 'Blue Whistle',
     src: '/partner-blue-mark.png',
     href: 'https://www.linkedin.com/in/anchit-goyal/',
   },
@@ -79,7 +80,7 @@ export const businessHighlights = [
     name: 'Economics & Management',
     industry: 'Academic foundation',
     description:
-      'First-Class Honours graduate in Economics and Management from The London School of Economics and Political Science.',
+      'Studied Economics and Management at The London School of Economics and Political Science.',
     role: 'LSE graduate',
     href: 'https://www.linkedin.com/in/anchit-goyal/',
   },
@@ -97,22 +98,10 @@ export const journeySteps = [
     body: 'Studied Economics and Management at The London School of Economics and Political Science.',
   },
   {
-    year: 'Honours',
-    title: 'First-Class Honours',
-    body: 'Graduated with First-Class Honours from LSE.',
-  },
-  {
     year: 'Expertise',
     title: 'Research & Communication',
     body: 'Skills include research and analysis, writing and communication, teamwork and leadership.',
   },
-];
-
-export const highlights = [
-  { value: 'LSE', label: 'The London School of Economics and Political Science' },
-  { value: '1st', label: 'First-Class Honours' },
-  { value: 'E&M', label: 'Economics and Management' },
-  { value: '5', label: 'Areas of expertise listed on LinkedIn' },
 ];
 
 export const mediaItems = [
@@ -120,11 +109,6 @@ export const mediaItems = [
     title: 'Writing & Communication',
     category: 'Professional skill',
     description: 'Clear writing and communication are among Anchit’s stated areas of expertise.',
-  },
-  {
-    title: 'Teamwork & Leadership',
-    category: 'Professional skill',
-    description: 'Collaborative work and leadership are part of his stated professional skill set.',
   },
   {
     title: 'Research & Analysis',

@@ -25,7 +25,7 @@
     height: 100dvh;
     place-items: center;
     overflow: hidden;
-    background: #2a1018;
+    background: var(--bg);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -84,14 +84,14 @@
 
   .ring-secondary {
     fill: none;
-    stroke: #b89a65;
+    stroke: var(--accent);
     stroke-width: 0.65;
     opacity: 0.42;
   }
 
   .ring-primary {
     fill: none;
-    stroke: #b89a65;
+    stroke: var(--accent);
     stroke-width: 1.15;
     stroke-dasharray: 100;
     stroke-dashoffset: 100;
@@ -99,14 +99,14 @@
   }
 
   .orbit-accent {
-    fill: #b89a65;
+    fill: var(--accent);
     transform-box: view-box;
     transform-origin: 60px 60px;
     animation: accent-orbit 12s linear 1.3s infinite;
   }
 
   .monogram-letters {
-    color: #f7f3ef;
+    color: var(--text);
     font-family: 'Cormorant SC', 'Cormorant Garamond', Georgia, serif;
     font-size: clamp(2.2rem, 7vw, 3rem);
     font-weight: 600;
@@ -121,7 +121,7 @@
   .preloader-caption {
     position: absolute;
     top: calc(100% + clamp(1.25rem, 3vh, 1.8rem));
-    color: #d8cec8;
+    color: var(--muted);
     font-family: 'Cormorant SC', 'Cormorant Garamond', Georgia, serif;
     font-size: 0.72rem;
     letter-spacing: 0.24em;
